@@ -13,6 +13,10 @@ export default function App() {
   };
 
   const [animals, setAnimals] = useState([]);
+
+  const renderedAnimals = animals.map((animal, index) => {
+    return <AnimalShow key={index} type={animal} />;
+  });
  
   return (
     <div>
@@ -21,7 +25,7 @@ export default function App() {
       >
         Add Animal
       </button>
-      <div>{animals}</div>
+      <div>{renderedAnimals}</div>
     </div>
   );
 }
